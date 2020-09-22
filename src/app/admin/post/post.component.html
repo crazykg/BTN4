@@ -1,0 +1,157 @@
+<div class="table-responsive">
+    <div class="title mt-15">Danh sách Thông tin</div>
+    <form class="inform well" id="frmSearch" novalidate="novalidate">
+        <div class="row">
+            <label class="col-sm-1 text-right" for="TU_KHOA">Từ khóa</label>
+            <div class="col-sm-3">
+                <input class="form-control" (change)="filterByTuKhoa($event.target.value)" id="TU_KHOA" name="TU_KHOA"
+                    type="text" value="" placeholder="Nhập từ khóa tìm kiếm">
+            </div>
+            <label class="col-sm-1  text-right">Loại</label>
+            <div class="col-sm-3">
+                <select (change)="filterByTrangThai($event.target.value)" class="form-control">
+                    <option value="0">Hiển thị</option>
+                    <option value="1">Đã ngưng hiển thị</option>
+                </select>
+            </div>
+            <label class="col-sm-1"></label>
+            <div class="col-sm-3">
+                <button type="button" class="btn btn-primary" id="ipSearch"><span class="glyphicon glyphicon-search"
+                        aria-hidden="true"></span> Tìm kiếm</button>
+
+            </div>
+        </div>
+    </form>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th class="toolbar" colspan="7">
+                    <button class="btn btn-primary" (click)="refreshModal()" data-toggle="modal" href='#modal_add'>
+                        <span class="glyphicon glyphicon-plus"></span> Thêm mới
+                    </button>
+                    <button type="button"class="btn btn-default" (click)="deleteByListChecked()" [disabled]="disabled" id="btnDeleteByList">
+                        <span class="glyphicon glyphicon-remove"></span> Xóa
+                    </button>
+                    <span class="pull-right">{{total}} bản ghi</span>
+                </th>
+            </tr>
+            <tr>
+                <th class="text-center"><input type="checkbox" name="all" (change)="selectAll($event.target)" /></th>
+                <th>STT</th>
+                <th>Tiêu đề</th>
+                <th>Nội dung</th>
+                <th>Trạng thái</th>
+                <th colspan="2">Chức năng</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="total == 0">
+            <tr>
+                <td colspan="7">
+                    Không có dữ liệu
+                </td>
+            </tr>
+        </tbody>
+        <tbody id="tblContent" *ngIf="total > 0">
+            <tr *ngFor="let item of itemList; let i = index ">
+                <td  class="text-center">
+                    <input type="checkbox" name="post-{{item.id}}" value="{{item.id}}" (click)="select()">
+                </td>
+                <td>{{i+(pageIndex-1)*pageSize+1}}</td>
+                <td>{{item.title}}</td>
+                <td innerHTML="{{item.content}}"> </td>
+                <td *ngIf="!item.isDeleted">Hiển thị</td>
+                <td *ngIf="item.isDeleted">Ngừng hiển thị</td>
+                <td>
+                    <a (click)="getItem(item.id)" href="javascript:;" data-toggle="modal" href='#modal_add'>
+                        <i class="glyphicon glyphicon-pencil"></i>
+                    </a></td>
+                <td>
+                    <a class="text-danger" (click)="remove(item.id)" href="javascript:;">
+                        <i class="glyphicon glyphicon-remove"></i>
+                    </a>
+                </td>
+            </tr>
+            <tr *ngIf="arrPageList.length >1">
+                <td colspan="7">
+                    <span class="pull-right">
+                        <span *ngFor="let pageIdx of arrPageList; let i = index">
+                            <span *ngIf="i==0" (click)="changePageNumber(pageIdx,$event.target)" class="btn btn-default btnPazing active" >{{pageIdx}}</span>
+                            <span *ngIf="i>0" (click)="changePageNumber(pageIdx,$event.target)" class="btn btn-default btnPazing" >{{pageIdx}}</span>
+                        </span>
+                    </span>
+                    <span class="pull-right">
+                        <select class="form-control" name="" id="" (change)="changePageSize($event.target.value)">
+                            <option aria-readonly="true" value="5">Size</option>
+                            <option value="10">10</option>
+                            <option value="50">50</option>
+                        </select>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="modal_add">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form class="form-horizontal" [formGroup]="model.formGroup" (ngSubmit)="addOrEdit()"
+                enctype="multipart/form-data">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;
+                    </button>
+                    <h4 class="modal-title"> <span *ngIf="model.id==0"><strong> Thêm mới bài viết</strong></span> <span
+                            *ngIf="model.id>0"><strong> Cập nhật bài viết</strong></span> </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="hidden" [(ngModel)]="model.id" formControlName="id">
+                        <label class="col-sm-2 control-label">Tiêu đề</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" [(ngModel)]="model.title" formControlName="title"
+                                placeholder="Nhập tiêu đề bài viết">
+                            <p class="text-muted" [hidden]="!(model.formGroup.controls['title'].hasError('required'))">
+                                Cần nhập tiêu đề
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Nội dung</label>
+                        <div class="col-sm-10">
+                            <!-- <ckeditor [editor]="Editor" [(ngModel)]="model.content" data="Nội dung cần nh"  formControlName="content" 
+                                aria-placeholder="Nhập nội dung"></ckeditor> -->
+                                <editor [init]="{
+                                    base_url: '/tinymce',
+                                    suffix: '.min',
+                                    menubar: false,
+                                    height: 350,
+                                    plugins: [
+                                    'advlist autolink lists link image charmap print preview anchor',
+                                    'searchreplace visualblocks code fullscreen',
+                                    'insertdatetime media table paste code help wordcount'
+                                    ],
+                                    toolbar:
+                                    'undo redo | formatselect | bold italic backcolor | \
+                                    alignleft aligncenter alignright alignjustify | \
+                                    bullist numlist outdent indent | removeformat | help'
+                                  }" [(ngModel)]="model.content" formControlName="content"></editor>
+                            <!-- <textarea id="content" placeholder="Nhập nội dung bài viết" [(ngModel)]="model.content"
+                                class="form-control" formControlName="content" rows="10"></textarea> -->
+
+                            <p class="text-muted"
+                                [hidden]="!(model.formGroup.controls['content'].hasError('required'))">
+                                Cần nhập nội dung
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" #closeBtn>Close
+                    </button>
+                    <button type="submit" class="btn btn-primary" [disabled]="!(model.formGroup.valid)">Lưu
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

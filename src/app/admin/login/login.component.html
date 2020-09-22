@@ -1,0 +1,46 @@
+<!-- Latest compiled and minified CSS & JS -->
+<div class="row mt-15">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <strong>Đăng nhập hệ thống</strong>
+            </div>
+            <div class="panel-body">
+                <fieldset>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-10  col-md-offset-1 ">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="glyphicon glyphicon-user"></i>
+                                    </span>
+                                    <input class="form-control" name="UserName" [(ngModel)]="UserName"
+                                        placeholder="Tên đăng nhập" type="text" value="">
+                                </div>
+                                <span class="field-validation-valid" data-valmsg-for="UserName"
+                                    data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="glyphicon glyphicon-lock"></i>
+                                    </span>
+                                    <input class="form-control" name="Password" [(ngModel)]="Password" placeholder="Mật khẩu"
+                                        type="password">
+                                </div>
+                                <span class="field-validation-valid" data-valmsg-for="Password"
+                                    data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="form-group" style="text-align: center">
+                                <input type="submit" (click)="LogOn()" class="btn btn-default" value="Đăng nhập">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4"></div>
+</div>

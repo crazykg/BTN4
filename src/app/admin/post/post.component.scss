@@ -1,0 +1,33 @@
+.title {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    line-height: normal;
+    text-decoration: underline;
+    text-transform: uppercase;
+    height: 30px;
+    vertical-align: middle;
+}
+.table > thead > tr > th {
+    background-color: #eee;
+    font-weight: bold;
+    text-align: center;
+}
+
+.table > thead > tr > th.toolbar{
+    background-color: #f5f5f5;
+    margin-bottom: 0;
+    margin-top: 5px;
+    text-align: left;
+}
+
+
+.table-responsive{
+    border-radius: 3px;
+}
+button {
+    outline: none;
+    margin-right: 5px;
+}

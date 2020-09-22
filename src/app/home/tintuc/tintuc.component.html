@@ -1,0 +1,32 @@
+<div class="row container">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-8">
+        <div class="row mb-1">
+            <table class="tintucTable">
+                <tbody>
+                    <tr *ngFor="let item of itemList;">
+                        <td>
+                            <p> <strong>{{item.title}}</strong> </p> 
+                            <p class="timeline-head">     
+                                <small>{{item.createDate| date: 'EEEE, HH giờ mm, dd/MM/yyyy'}}</small>
+                            </p>
+                            <p class="text-muted" innerHTML="{{item.content}}">
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <button class="btn btn-default" *ngIf="currentPageNumber >1" (click)="backPage()">
+                                <i class="	glyphicon glyphicon-menu-left"></i>Trước
+                            </button>
+                            <button class="btn btn-default" *ngIf="currentPageNumber < totalPageNumber"
+                                (click)="nextPage()">
+                                Tiếp<i class="glyphicon glyphicon-menu-right"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
