@@ -32,10 +32,13 @@
               { "glob": "**/*", "input": "node_modules/tinymce/plugins", "output": "/tinymce/plugins/"}
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": [
-              "node_modules/tinymce/tinymce.min.js"
+              "node_modules/tinymce/tinymce.min.js",
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.js"
             ]
           },
           "configurations": {
@@ -102,7 +105,7 @@
               { "glob": "**/*", "input": "node_modules/tinymce/plugins", "output": "/tinymce/plugins/"}
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
             ],
             "scripts": [
               "node_modules/tinymce/tinymce.min.js"
