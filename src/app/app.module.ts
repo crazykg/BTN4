@@ -10,6 +10,8 @@ registerLocaleData(localeVi);
 //plugin
 import { ChartsModule } from 'ng2-charts';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { CountUpModule } from 'ngx-countup';
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 
 //service
 import { API } from './services/api';
@@ -26,6 +28,9 @@ import { HomeFooterComponent } from './home/layout/home-footer/home-footer.compo
 import { HomeHeaderComponent } from './home/layout/home-header/home-header.component';
 import { HomeMainComponent } from './home/layout/home-main/home-main.component';
 import { TintucComponent } from './home/tintuc/tintuc.component';
+import { TinhHinhComponent } from './home/tinh-hinh/tinh-hinh.component';
+import { PrecautionsComponent } from './home/precautions/precautions.component';
+import { SymptomsComponent } from './home/symptoms/symptoms.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +44,10 @@ import { TintucComponent } from './home/tintuc/tintuc.component';
     HomeFooterComponent,
     HomeHeaderComponent,
     HomeMainComponent,
-    TintucComponent
+    TintucComponent,
+    TinhHinhComponent,
+    PrecautionsComponent,
+    SymptomsComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +56,9 @@ import { TintucComponent } from './home/tintuc/tintuc.component';
     HttpClientModule,
     ReactiveFormsModule,
     ChartsModule,
-    EditorModule
+    EditorModule,
+    CountUpModule,
+    AutocompleteLibModule
   ],
   providers: [
     API,
