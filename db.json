@@ -1,0 +1,28 @@
+{
+  "contact": [
+    {
+      "id": 1,
+      "name": "huynh nhu1",
+      "email": "nhubongxe@gmail.com",
+      "phone": "0947412263",
+      "company": "vnpt dong nai",
+      "message": "Toi muon hoi mot so thu"
+    },
+    {
+      "name": "huynh nhu12",
+      "email": "nhubongxe@gmail.com",
+      "phone": "09474122632",
+      "company": "vnpt dong nai2",
+      "message": "Toi muon hoi mot so thu",
+      "id": 2
+    },
+    {
+      "name": "huynh nhu12",
+      "email": "nhubongxe@gmail.com",
+      "phone": "09474122632",
+      "company": "vnpt dong nai2",
+      "message": "Toi muon hoi mot so thu",
+      "id": 3
+    }
+  ]
+}
