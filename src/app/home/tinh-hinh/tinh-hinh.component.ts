@@ -41,9 +41,9 @@ export class TinhHinhComponent implements OnInit {
   // country chart JS
 
   public doughnutChartLabels: Label[] = [
-    "Confirmation Issues",
-    "Recovered Issues",
-    "Death Issues"
+    "Số ca nhiễm",
+    "Số ca phục hồi",
+    "Số ca tử vong"
   ];
   public doughnutChartData: SingleDataSet;
   public doughnutChartType: ChartType = "pie";
@@ -51,9 +51,9 @@ export class TinhHinhComponent implements OnInit {
   // global Chart JS
 
   public globalDoughnutChartLabels: Label[] = [
-    "Confirmation Issues",
-    "Recovered Issues",
-    "Death Issues"
+    "Số ca nhiễm",
+    "Số ca phục hồi",
+    "Số ca tử vong"
   ];
   public globalDoughnutChartData: SingleDataSet;
   public globalDoughnutChartType: ChartType = "pie";
