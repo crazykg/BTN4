@@ -4,15 +4,15 @@
             <div class="row search-country">
                 <div class="col-sm-6 col-12">
                     <div class="welcome bold-text">
-                        Welcome to <br />
-                        COVID-19 Tracker 🙌
+                        Tra cứu <br />
+                        tình hình COVID-19 🙌
                     </div>
                 </div>
                 <div class="col-sm-6 col-12">
                     <div class="search pl-3">
                         <div class="ng-autocomplete">
                             <ng-autocomplete [data]="countries" [searchKeyword]="keyword"
-                                placeHolder="Enter the Country Name" (selected)='selectEvent($event)'
+                                placeHolder="Nhập tên quốc gia" (selected)='selectEvent($event)'
                                 (inputChanged)='onChangeSearch($event)' (inputFocused)='onFocused($event)'
                                 historyIdentifier="countries" [itemTemplate]="itemTemplate"
                                 [notFoundTemplate]="notFoundTemplate">
@@ -39,7 +39,7 @@
                                 {{ country | uppercase }}
                             </div>
                             <div class="text-sm">
-                                Last Updated on
+                                Cập nhật lần cuối
                                 <span class="text-red">"{{ lastUpdate | date }}"</span>
                             </div>
                         </div>
@@ -58,8 +58,8 @@
                     <div class="col-md-6 col-12">
                         <div class="bg-white mt-3">
                             <div class="mt-1 flex flex-wrap flex-row">
-                                <div class="m-auto text-sm">Epidemic Progress</div>
-                                <div class="m-auto text-indigo-700 text-sm">GLOBAL</div>
+                                <div class="m-auto text-sm">Tình hình dịch</div>
+                                <div class="m-auto text-indigo-700 text-sm">THẾ GIỚI</div>
                             </div>
                             <div class="my-6 m-auto w-full">
                                 <div class="">
@@ -75,7 +75,7 @@
                     <div class="col-md-6 col-12">
                         <div class="bg-white mt-3">
                             <div class="mt-1 flex flex-wrap flex-row">
-                                <div class="m-auto text-sm">Latest Progress</div>
+                                <div class="m-auto text-sm">Tình hình dịch</div>
                                 <div class="m-auto text-indigo-700 text-sm"> {{ country | uppercase }}</div>
                             </div>
                             <div class="my-6 m-auto w-full">
@@ -98,21 +98,21 @@
                 <section>
                     <div class="m-auto">
                         <div class="text-indigo-700 text-center text-sm">
-                            See more highlights
+                            Xem thông tin nổi bật
                         </div>
                         <img class="doctor-img rounded-full m-auto w-48" src="../../../assets/home/images/doctor.png" />
                         <div class="text-black text-sm text-center">
-                            World Health Organization
+                            Tổ chức y tế thế giới
                         </div>
                         <div class="text-indigo-700 text-sm text-center">@Corona</div>
                         <div class="mt-1 flex flex-col flex-wrap mx-6">
                             <div
                                 class="flex bg-red-300 rounded-lg py-4 px-4 md:px-0 mt-3 flex-wrap flex-row justify-evenly">
-                                <img src="../../../assets/home/images/stethoscope.png" class="img-icon" />
+                                <img src="../../../assets/home/images/peo.png" class="img-icon" />
                                 <div class="m-auto flex flex-col">
-                                    <div class="m-auto text-sm1">Confirmed</div>
+                                    <div class="m-auto text-sm1">Số ca</div>
                                     <div class="m-auto text-sm text-gray-700">
-                                        Updated: Sep 22, 2020
+                                        Cập nhật: {{ lastUpdate | date }}
                                     </div>
                                 </div>
                                 <div [countUp]="confirmedValue" [options]="options" class="m-auto text-sm1 text-2xl">
@@ -124,9 +124,9 @@
                                 class="flex bg-indigo-300 rounded-lg py-4 px-4 md:px-0 mt-3 flex-wrap flex-row justify-evenly">
                                 <img src="../../../assets/home/images/stethoscope.png" class="img-icon" />
                                 <div class="m-auto flex flex-col">
-                                    <div class="m-auto text-sm1">Recovered</div>
+                                    <div class="m-auto text-sm1">Phục hồi</div>
                                     <div class="m-auto text-sm text-gray-700">
-                                        Updated: Sep 22, 2020
+                                        Cập nhật: {{ lastUpdate | date }}
                                     </div>
                                 </div>
                                 <div [countUp]="recoveredValue" [options]="options" class="m-auto text-sm1 text-2xl">
@@ -137,9 +137,9 @@
                                 class="flex bg-yellow-300 rounded-lg py-4 px-4 md:px-0 mt-3 flex-wrap flex-row justify-evenly">
                                 <img src="../../../assets/home/images/cartoon-skull.png" class="img-icon" />
                                 <div class="m-auto flex flex-col">
-                                    <div class="m-auto text-sm1">Deaths</div>
+                                    <div class="m-auto text-sm1">Chết</div>
                                     <div class="m-auto text-sm text-gray-700">
-                                        Updated: Sep 22, 2020
+                                        Updated: {{ lastUpdate | date }}
                                     </div>
                                 </div>
                                 <div [countUp]="deathsValue" [options]="options" class="m-auto text-sm1 text-2xl">
@@ -160,13 +160,13 @@
             <div class="text-center mt-4 mr-2">
                 <button [routerLink]="['/tinh-hinh/precautions']" routerLinkActive="router-link-active"
                     class="section-select bg-red-400 text-sm text-black">
-                    Know Precautions
+                    Biện pháp
                 </button>
             </div>
             <div class="text-center mt-4">
                 <button [routerLink]="['/tinh-hinh/symptoms']" routerLinkActive="router-link-active"
                     class="section-select bg-indigo-600 text-sm text-white">
-                    Know Symptoms
+                    Triệu chứng
                 </button>
             </div>
         </div>

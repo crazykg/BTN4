@@ -31,6 +31,7 @@ import { TintucComponent } from './home/tintuc/tintuc.component';
 import { TinhHinhComponent } from './home/tinh-hinh/tinh-hinh.component';
 import { PrecautionsComponent } from './home/precautions/precautions.component';
 import { SymptomsComponent } from './home/symptoms/symptoms.component';
+import { MyteamComponent } from './home/myteam/myteam.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { SymptomsComponent } from './home/symptoms/symptoms.component';
     TintucComponent,
     TinhHinhComponent,
     PrecautionsComponent,
-    SymptomsComponent
+    SymptomsComponent,
+    MyteamComponent
   ],
   imports: [
     BrowserModule,

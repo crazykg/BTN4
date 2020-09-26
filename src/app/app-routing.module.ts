@@ -4,8 +4,9 @@ import { AuthGuard } from './guards/auth.guard';
 
 import { HomeMainComponent } from './home/layout/home-main/home-main.component';
 import { CovidComponent } from './home/covid/covid.component';
-import { TintucComponent } from './home/tintuc/tintuc.component';
-
+import { TintucComponent } from './home/tintuc/tintuc.component'; 
+import { ContactusComponent } from './home/contactus/contactus.component';  
+import { MyteamComponent } from './home/myteam/myteam.component'; 
 
 import { MainComponent } from './admin/layout/main/main.component';
 import { LoginComponent } from './admin/login/login.component';
@@ -41,7 +42,14 @@ const routes: Routes = [
           },
         ]
       },
-      
+      {
+        path: 'contact-us',
+        component: MyteamComponent 
+      },
+      {
+        path: 'introduce-team',
+        component: ContactusComponent 
+      }
     ]
   },
   {
