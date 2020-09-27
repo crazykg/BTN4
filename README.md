@@ -17,3 +17,9 @@ Admin: /admin
 ```
 ## Tham khảo
 <a href='https://ncov.moh.gov.vn/'>https://ncov.moh.gov.vn/</a>
+
+API: https://api.covid19api.com
+
+##
+Thành viên Nhóm:
+Văn Rở -Thúy Hiền -Thành Vũ - Đông Giang 
