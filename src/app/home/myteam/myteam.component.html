@@ -1,0 +1,41 @@
+<div class="contact1">
+    <div class="container-contact1">
+        <div class="contact1-pic js-tilt col-6" data-tilt>
+            <img src="../../../assets/home/images/covid-bg.jpg" alt="IMG">
+        </div>
+        
+        <form class="contact1-form validate-form col-6" (ngSubmit)="sendContact()">
+            <span class="contact1-form-title">
+                LIÊN HỆ CHÚNG TÔI
+            </span>
+
+            <div class="wrap-input1 validate-input" data-validate = "Không được để trống">
+                <input class="input1" type="text" name="name" placeholder="Nhập họ và tên" [(ngModel)]="ContactUs.name">
+                <span class="shadow-input1"></span>
+            </div>
+
+            <div class="wrap-input1 validate-input" data-validate = "Định dạng email: ex@abc.xyz">
+                <input class="input1" type="text" name="email" placeholder="Nhập email" [(ngModel)]="ContactUs.email">
+                <span class="shadow-input1"></span>
+            </div>
+
+            <div class="wrap-input1 validate-input" data-validate = "Chủ đề bạn muốn hỏi?">
+                <input class="input1" type="text" name="title" placeholder="Chủ đề bạn muốn hỏi?" [(ngModel)]="ContactUs.title">
+                <span class="shadow-input1"></span>
+            </div>
+
+            <div class="wrap-input1 validate-input" data-validate = "Nội dung câu hỏi">
+                <textarea class="input1" name="content" placeholder="Nội dung câu hỏi" [(ngModel)]="ContactUs.content"></textarea>
+                <span class="shadow-input1"></span>
+            </div>
+
+            <div class="container-contact1-form-btn">
+                <button type="submit"  class="contact1-form-btn">
+                    <span>
+                        GỬI ĐI
+                    </span>
+                </button>
+            </div>
+        </form> 
+    </div>
+</div>

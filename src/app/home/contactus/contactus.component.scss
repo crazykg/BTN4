@@ -1,0 +1,56 @@
+@media (min-width: 768px) {
+    .h1-responsive {
+        font-size: 200%;
+    }
+}
+@media (min-width: 576px){
+    .h1-responsive {
+        font-size: 170%;
+    }
+}
+.h1-responsive {
+    font-size: 150%;
+}
+.w-responsive {
+    width: 75%;
+}
+.grey-text {
+    color: #9e9e9e !important;
+} 
+.team-section .avatar img {
+    max-width: 200px;
+    height: auto;
+}   
+@media (min-width: 768px)
+{
+    .d-md-flex {
+        display: -ms-flexbox !important;
+        display: flex !important;
+    }
+    .text-md-left {
+        text-align: left !important;
+    }
+}  
+.h1-responsive {
+    font-size: 34px;
+  }
+.description-team {
+    font-size: 18px !important;
+}
+.wrap-member h4.font-weight-bold.mb-3 {
+    font-size: 17px;
+}
+.wrap-member h4.font-weight-bold.mb-3 {
+  font-size: 17px;
+}
+.wrap-member h6.font-weight-bold.grey-text.mb-3 {
+    font-size: 13px;
+}
+.wrap-member .job-detail {
+    font-size: 12px;
+}
+.wrap-member .btn-floating i {
+    font-size: 20px !important;
+    margin-right: 10px;
+    cursor: pointer;
+}

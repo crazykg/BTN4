@@ -1,76 +1,69 @@
-<!-- Latest compiled and minified CSS & JS -->
-<header class="container-fluid">
-    <div class="container bg-td">
-        <div class="row hidden-xs">
-            <div class="col-xs-9">
-                <a class="pull-left logo" [routerLink]="[ '/']"><img height="75" src="/assets/home/images/logo_byt.png"
-                        alt=""></a>
-                <div class="slogan">
-                    <h4>BỘ Y TẾ</h4>
-                    <h2>TRANG TIN VỀ DỊCH BỆNH VIÊM ĐƯỜNG HÔ HẤP CẤP COVID-19</h2>
+<div class="container-fluid">
+    <header>
+        <div class="container bg-td">
+            <div class="row hidden-xs">
+                <div class="col-xs-9">
+                    <a class="pull-left logo" [routerLink]="[ '/']"><img height="75" src="/assets/home/images/logo_byt.png" alt=""></a>
+                    <div class="slogan">
+                        <h4>BỘ Y TẾ</h4>
+                        <h2>TRANG TIN VỀ DỊCH BỆNH VIÊM ĐƯỜNG HÔ HẤP CẤP COVID-19</h2>
 
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs-3">
-                <div class="pull-right text-center mt-15">
-                    Đường dây nóng <br>
-                    <!--<i class="fas fa-phone-alt mr-5 text-warning1"></i>--><a class="hotline"
-                        href="tel:19009095">19009095</a>
+                <div class="col-xs-3">
+                    <div class="pull-right text-center mt-15">
+                        Đường dây nóng <br>
+                        <!--<i class="fas fa-phone-alt mr-5 text-warning1"></i>--><a class="hotline" href="tel:19009095">19009095</a>
 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
-<nav class="navbar navbar-default navbar-yte mb-0">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#defaultNavbar1"
-                aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
-                    class="icon-bar"></span><span class="icon-bar"></span></button>
-            <a class="navbar-brand visible-xs-block" [routerLink]="[ '/' ]"><img
-                    src="/assets/home/images/logo_mobile.png" alt="" width="36"></a>
-            <div class="slogan-mobile visible-xs-block">
-                <h2>TRANG TIN VỀ DỊCH BỆNH VIÊM ĐƯỜNG HÔ HẤP CẤP COVID-19</h2>
-            </div>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="defaultNavbar1">
-            <ul class="nav navbar-nav nav-yte">
-                <li class="active">
-                    <a [routerLink]="[ '/' ]">
-                        <i id="menu1"></i>TRANG CHỦ<span class="sr-only">(current)</span>
-                    </a>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-light  navbar-yte">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" style="color: #fff;" [routerLink]="[ '/' ]">Trang chủ <span class="sr-only">(current)</span></a>
                 </li>
-                <li>
-                    <a [routerLink]="[ '/tintuc' ]">
-                        <i id="menu7"></i>
-                        TIN TỨC
-                    </a>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: #fff;" [routerLink]="[ '/tintuc' ]">Tin tức</a>
                 </li>
-                <li>
-                    <a [routerLink]="[ '/tinh-hinh/precautions' ]">
-                        <i id="menu7"></i>
-                        TÌNH HÌNH
-                    </a>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: #fff;" [routerLink]="[ '/tinh-hinh/precautions' ]">Tình hình</a>
                 </li>
-                <li>
-                    <a [routerLink]="[ '/contact-us' ]">
-                        <i id="menu7"></i>
-                        LIÊN HỆ
-                    </a>
+
+                <li class="nav-item">
+                    <a class="nav-link" style="color: #fff;" [routerLink]="[ '/contact-us' ]">Liên hệ</a>
                 </li>
-                <li>
-                    <a [routerLink]="[ '/introduce-team' ]">
-                        <i id="menu7"></i>
-                        VỀ CHÚNG TÔI
-                    </a>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: #fff;" [routerLink]="[ '/introduce-team' ]"> Về chúng tôi</a>
                 </li>
-                <li class="divider"></li>
+            </ul>
+            <ul>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" style="color: #fff;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Quản trị hệ thống
+                </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" [routerLink]="[ '/admin/login' ]">Đăng nhập</a>
+                        <a class="dropdown-item" [routerLink]="[ '/admin/post' ]">Đăng bài</a>
+                    </div>
+                </li>
             </ul>
         </div>
-        <!-- /.navbar-collapse -->
+    </nav>
+</div>
+<div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#defaultNavbar1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                    class="icon-bar"></span><span class="icon-bar"></span></button>
+        <a class="navbar-brand visible-xs-block" [routerLink]="[ '/' ]"><img src="/assets/home/images/logo_mobile.png" alt="" width="36"></a>
+        <div class="slogan-mobile visible-xs-block">
+            <h2>TRANG TIN VỀ DỊCH BỆNH VIÊM ĐƯỜNG HÔ HẤP CẤP COVID-19</h2>
+        </div>
     </div>
-    <!-- /.container-fluid -->
-</nav>
+    <!-- /.navbar-collapse -->
+</div>
+<!-- /.container-fluid -->
